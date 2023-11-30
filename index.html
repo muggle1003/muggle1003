@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		
+		<title>古建奇观，杭州传世之宝</title>
+		<style>
+		    body, html {
+		      height: 100%;
+		      margin: 0;
+		      padding: 0;
+			  background-image: url("https://i.hd-r.cn/cf622a185e86a505f07e6b4183868a66.jpg");
+			  background-size:100% 100%;
+			  background-attachment:fixed;
+		    }
+		    .photo{
+				width:200px;
+				height:300px;
+				background-image:url("https://i.hd-r.cn/b421cf331f8bee78542e9392ad1c4214.jpg");
+				background-size:cover;
+				background-position:center center;
+				position:absolute;
+				left:3%;
+				bottom:5%;
+				border-radius: 10px;
+				border:3px solid #ffffff;
+				transition: all 0.5s;
+			}
+			
+			.photo:hover {
+			    width:100%;
+				height:650px;
+			}
+			
+				
+			.text{
+				 font-size: 50px;
+				    font-family: 楷体;
+					color:#ffffff;
+				    font-weight: 10px;
+				    white-space: normal;
+					padding-top: 100px;
+					    padding-bottom: 50px;
+					    padding-left: 40px;
+					    padding-right: 50px;
+			}
+			.text1{
+				font-size: 50px;
+				   font-family: 楷体;
+				   color:#ffffff;
+				   font-weight: 10px;
+				   white-space: normal;
+					padding-top: 100px;
+					padding-bottom: 50px;
+					padding-left: 100px;
+					padding-right: 30px;
+			}
+				
+			.zhaopian{
+				width:300px;
+				height:200px;
+				background-image:url("https://i.hd-r.cn/31a6671bf87975b29f9a10817a6cae52.jpg ");
+				background-size:cover;
+				background-position:center center;
+				position:absolute;
+				bottom:5%;
+				right:5%;
+				border-radius: 10px;
+				border:3px solid #ffffff;
+				transition: all 0.5s;
+			}
+			
+			.zhaopian:hover {
+			    width:100%;
+				height:650px;
+			}
+		    .background-container {
+		      position: relative;
+			  display:flex;
+			  justify-content:center;
+			  align-items:center;
+			  height:100vh;
+		      
+		      
+		    }
+			
+			
+			.title {
+			  position: absolute;
+			  top: 50px; 
+			  left: 50%;
+			  transform: translateX(-50%);
+			  font-size: 100px;
+			  color: #fff;
+			  text-align: center;
+			  width: 100%;
+			}
+		    
+		    .start-button {
+		      position: absolute;
+		      top: 60%;
+		      left: 48%;
+		      transform: translate(-50%, -50%);
+		      padding: 15px 30px;
+		      font-size: 24px;
+		      background-color: #ffaa00;
+		      color: #000;
+			  border-radius: 5px;
+		      border: none;
+		      cursor: pointer;
+		    }
+			#button:hover{
+				color:#ff0000;
+			}
+			.music{
+				width:60px;
+				height:60px;
+				
+				position:absolute;
+				top:40%;
+				left:70%;
+				border-radius: 5px;
+				
+			}
+			
+			.music:hover{
+				opacity:0.9;
+			}
+		</style>
+		<script>
+			function changeText(){
+				 var a=document.getElementById("foo").innerText="  灵隐寺主要由天王殿、大雄宝殿、药师殿、法堂、华严殿为中轴线，两边附以五百罗汉堂、济公殿、华严阁、大悲楼、方丈楼等建筑构成。天王殿：弥勒佛、四大天王；大雄宝殿：释迦牟尼佛、观音菩萨、地藏菩萨；药师殿：药师佛、日光菩萨、月光菩萨、十二药叉大将；罗汉堂：五百罗汉。";
+			}
+			function originText(){
+				var b=document.getElementById("foo");
+				b.innerText="佛像";
+				
+			}
+		</script>
+		<script>
+			function changeText1(){
+				 var c=document.getElementById("jz").innerText="  灵隐寺建筑群规模宏大，气势雄伟，整体建筑风格融合了中国古代建筑艺术的精华，具有浓厚的佛教文化氛围。寺内建筑主要包括天王殿、大雄宝殿、飞来峰塔、藏经楼等，其中大雄宝殿是灵隐寺的主体建筑，是寺内最为庄严肃穆的建筑。灵隐寺建筑以其精美的雕刻和精湛的建筑工艺而闻名，尤其以其石刻艺术和木雕艺术而著称。";
+			}
+			function originText1(){
+				var d=document.getElementById("jz");
+				d.innerText="建筑";
+				
+			}
+		</script>
+	</head>		
+	
+	<body>
+		<div class="background-container">
+			<h1 class="title"><i>古建奇观，杭州传世之宝</i></h1>
+		    <button class="start-button" id="button" onclick="window.location.href='https://zhanmeimei.github.io/lingyin/'">点此进入</button>
+		</div>
+		<div class="music">
+		<iframe frameborder="no" border="0" marginwidth="10" marginheight="10" width=85 height=86 src="//music.163.com/outchain/player?type=2&id=5274302&auto=1&height=66"></iframe>		
+		</div>
+		<div class="photo" id="fo" onmouseover="changeText()" onmouseout="originText()">
+			<div class="text" id="foo"><p>佛像</p></div>
+		</div>
+		    
+		<div class="zhaopian" onmouseover="changeText1()" onmouseout="originText1()">
+			<div class="text1" id="jz"><p>建筑</p></div>
+		</div>
+	</body>
+</html>
