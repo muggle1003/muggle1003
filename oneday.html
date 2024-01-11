@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        *,body{
+            padding: 0;
+            margin:0;
+        }
+        .main{
+            width: 100%;
+            height:500px;
+            position:relative;
+        }
+       #img{
+           background-image: url('img/gl.jpg');
+           position:absolute;
+           background-size: cover;
+           left: -400px;
+           top:30%;
+           width:500px;
+           height:500px;
+		   border:3px solid #0075b0;
+		   border-radius: 5px;
+           transition:all 1.5s;
+       }
+       .title{
+           width:100%;
+           text-align:center;
+           padding-top:20px;
+           letter-spacing:10px;
+       }
+       .main-p{
+           width:100%;
+           text-align:center;
+       }
+       .content{
+           width: 650px;
+           height:200px;
+           position:absolute;
+           left:600px;
+           top:50%;
+       }
+       .title-cont{
+           width: 100%;
+           height:40px;
+		   position: absolute;
+		   top: -100px; 
+		   left: 10px;
+           line-height: 40px;
+           border-bottom:1px solid #CD3333;
+           color:#CD3333;
+           padding-left:10px;
+       }
+       .content p{
+           line-height: 28px;
+           font-size: 14px;
+           padding-left:10px;
+       }
+	   .lss{
+		   width:120px;
+		   height:150px;
+		    position:absolute;
+		    top:100px;
+			left:120px;       	
+	   }
+	   .tgs{
+		   width:120px;
+		   height:150px;
+		    position:absolute;
+		    top:150px;
+		   	left:20px;       
+	   }
+	   .yfs{
+	   		   width:120px;
+	   		   height:150px;
+	   		    position:absolute;
+	   		    top:300px;
+	   		   	left:50px;       
+	   }
+	   .lls{
+	   		   width:120px;
+	   		   height:150px;
+	   		    position:absolute;
+	   		    top:310px;
+	   		   	left:205px;       
+	   }
+	   .window {
+		   width:1000px;
+		   height:600px;
+	     display: none;
+	     position: fixed;
+	     top: 50%;
+	     left: 50%;
+	     transform: translate(-50%, -50%);
+	     background-color: white;
+	     padding: 20px;
+	     border: 1px solid black;
+	     z-index: 9999;
+	   }
+	   .close-btn {
+	     position: absolute;
+	     top: 5px;
+	     right: 20px;
+	     cursor: pointer;
+		 font-size:60px;
+		 weight:bolder;
+		 color:#ffffff;
+	   }
+	   .prev-btn, .next-btn {
+	         position: absolute;
+	         top: 50%;
+	         transform: translateY(-50%);
+	         cursor: pointer;
+	       }
+		.prev-btn {
+			
+	         left: 10px;
+			 font-size:80px;
+			 weight:bolder;
+			 color:#ffaa00;
+	       }
+	    .next-btn {
+			font-size:80px;
+	         right: 10px;
+			 weight:bolder;
+			 color:#ffaa00;
+	       }
+		.carousel-img {
+		       width: 100%;
+		        height: 100%;
+		        object-fit: cover;
+		    }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+   <script type="text/javascript">
+        window.onload = function(){
+          show();
+        }
+        function show(){
+          document.getElementById("img").style.left="0";
+          
+        }
+	</script>
+	<script>
+		$(document).ready(function() {
+	      $('.lss').mouseover(function(){
+			  $(this).css('transform', 'scale(1.1)');
+		  });
+		  $('.lss').mouseout(function(){
+		  	  $(this).css('transform', 'scale(1)');
+		  });
+		  $(".lss").click(function(){
+			    $('#myWindow').show();
+		  });
+		  $('.close-btn').click(function() {
+		    $('#myWindow').hide();
+		  });
+		   var images = ['img/lss1.jpeg', 'img/lss2.jpeg', 'img/lss3.jpg']; 
+		    var currentImageIndex = 0;
+		  
+		    function showImage(index) {
+		      $('#carouselImage').attr('src', images[index]);
+		    }
+		  
+		    $('.prev-btn').click(function() {
+		        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+		        showImage(currentImageIndex);
+		      });
+		    
+		      $('.next-btn').click(function() {
+		        currentImageIndex = (currentImageIndex + 1) % images.length;
+		        showImage(currentImageIndex);
+		      });
+			  
+			  $('.tgs').mouseover(function(){
+			  	  $(this).css('transform', 'scale(1.1)');
+			  });
+			  $('.tgs').mouseout(function(){
+			  	  $(this).css('transform', 'scale(1)');
+			  });
+			  $(".tgs").click(function(){
+			  		$('#myWindow1').show();
+			  });
+			  $('.close-btn').click(function() {
+			    $('#myWindow1').hide();
+			  });
+			  var image1 = ['img/tgs1.jpeg', 'img/tgs2.jpeg', 'img/tgs3.jpg'];
+			   var Index1= 0;
+			  		  
+			   function showImage1(index) {
+			     $('#carouselImage1').attr('src', image1[index]);
+			   }
+			  		  
+			   $('.prev-btn').click(function() {
+			       Index1 = (Index1 - 1 + image1.length) % image1.length;
+			       showImage1(Index1);
+			     });
+			   
+			     $('.next-btn').click(function() {
+			       Index1 = (Index1 + 1) % image1.length;
+			       showImage1(Index1);
+			     });
+			
+			$('.yfs').mouseover(function(){
+				  $(this).css('transform', 'scale(1.1)');
+			});
+			$('.yfs').mouseout(function(){
+				  $(this).css('transform', 'scale(1)');
+			});
+			$(".yfs").click(function(){
+					$('#myWindow2').show();
+			});
+			$('.close-btn').click(function() {
+			  $('#myWindow2').hide();
+			});
+			var image2 = ['img/yfs1.jpg', 'img/yfs2.jpeg', 'img/yfs3.jpg'];
+			 var Index2= 0;
+					  
+			 function showImage2(index) {
+			   $('#carouselImage2').attr('src', image2[index]);
+			 }
+					  
+			 $('.prev-btn').click(function() {
+			     Index2 = (Index2 - 1 + image2.length) % image2.length;
+			     showImage2(Index2);
+			   });
+			 
+			   $('.next-btn').click(function() {
+			     Index2 = (Index2 + 1) % image2.length;
+			     showImage2(Index2);
+			   });
+			
+			$('.lls').mouseover(function(){
+					$(this).css('transform', 'scale(1.1)');
+			});
+			$('.lls').mouseout(function(){
+				  $(this).css('transform', 'scale(1)');
+			});
+			$(".lls").click(function(){
+					$('#myWindow3').show();
+			});
+			$('.close-btn').click(function() {
+			  $('#myWindow3').hide();
+			});
+			var image3 = ['img/lls1.jpg', 'img/lls2.jpg', 'img/lls3.jpeg'];
+			 var Index3= 0;
+					  
+			 function showImage3(index) {
+			   $('#carouselImage3').attr('src', image3[index]);
+			 }
+					  
+			 $('.prev-btn').click(function() {
+			    Index3 = (Index3 - 1 + image3.length) % image3.length;
+			     showImage3(Index3);
+			   });
+			 
+			   $('.next-btn').click(function() {
+			     Index3 = (Index3 + 1) % image3.length;
+			     showImage3(Index3);
+			   });
+		  });
+		  
+		  
+	</script>
+  </head>
+  <body>    
+    <div class="main">
+        <h2 class="title">灵隐导览 </h2>
+        <p class="main-p">Lingyin Temple Guide</p>
+        <div id="img">
+			<img class="lss" src="img/lss.jpg"/>
+			<img class="tgs" src="img/tgs.jpg"/>
+			<img class="yfs" src="img/yfs.jpg"/>
+			<img class="lls" src="img/lls.png"/>
+		</div>
+        <div class="content">
+            <h4 class="title-cont">灵隐寺打卡</h4>
+            <p>第一件，燃三支清香；</p>
+            <p>第二件，拜国运牌位；
+			一到寺庙，你将被古老的建筑和宁静的氛围所包围。寺内有众多庙宇和建筑物，包括大雄宝殿、天王殿、卧佛殿等。你可以参与寺庙的日常法事活动，感受佛教的宗教仪式，也可以在庙内静坐冥想，寻找内心的平静。
+			</p>
+            <p>第三件，数五百罗汉；</p>
+            <p>第四件，敬济公活佛；
+			灵隐寺是杭州最盛名在外的寺庙，历史最悠久的江南古刹，是济公出家的地方，被称"佛家所隐"的佛国世界。每个季节的灵隐都有不—样的风光，唯一不变的是那份古朴静谧的禅意。
+			</p>
+			<p>第五件，摸佛字壁；</p>
+			<p>第六件，供三圣佛灯；
+			</p>
+			<p>第七件，游览自然风景。
+			灵隐寺周边的灵隐山是一个美丽的山区景区，有着茂密的森林、清澈的泉水和壮丽的山川。你可以沿着山间小道徒步或爬山，欣赏大自然的壮丽景色。特别是在秋季，山上的红叶和金色的枫叶将给你带来不一样的视觉盛宴
+			</p>
+			<p>第八件，品味禅意美食。
+			素斋：在灵隐寺内的斋堂，您可以品尝到地道的素斋，味道鲜美，价格实惠。
+			西湖醋鱼：这是一道以西湖草鱼为主料，配以糖、醋、绍酒等调料烧制而成的传统名菜。
+			</p>
+        </div>
+		
+		<div class="window" id="myWindow">
+		  <span class="close-btn" >X</span>
+		  <img class="carousel-img" id="carouselImage" src="img/lss1.jpeg" />
+		   <span class="prev-btn" >《</span>
+		    <span class="next-btn" >》</span>
+		</div>
+		
+		<div class="window" id="myWindow1">
+		  <span class="close-btn" >X</span>
+		  <img class="carousel-img" id="carouselImage1" src="img/tgs1.jpeg" />
+		   <span class="prev-btn" >《</span>
+		    <span class="next-btn" >》</span>
+		</div>
+		
+		<div class="window" id="myWindow2">
+		  <span class="close-btn" >X</span>
+		  <img class="carousel-img" id="carouselImage2" src="img/yfs1.jpg" />
+		   <span class="prev-btn" >《</span>
+		    <span class="next-btn" >》</span>
+		</div>
+		
+		<div class="window" id="myWindow3">
+		  <span class="close-btn" >X</span>
+		  <img class="carousel-img" id="carouselImage3" src="img/lls1.jpg" />
+		   <span class="prev-btn" >《</span>
+		    <span class="next-btn" >》</span>
+		</div>
+    </div>
+  </body>
+</html>
